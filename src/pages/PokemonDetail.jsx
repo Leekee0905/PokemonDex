@@ -12,7 +12,6 @@ const PokemonDetail = () => {
   const params = useParams();
   const navigate = useNavigate();
   const data = MOCK_DATA.find((e) => e.id === Number(params.id));
-  console.log(data);
   return (
     <DetailContainer>
       <DetailImage src={data.img_url} alt={data.korean_name} />
