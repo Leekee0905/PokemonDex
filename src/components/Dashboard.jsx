@@ -24,7 +24,7 @@ const Dashboard = ({ selectedPokemon, setSelectedPokemon }) => {
             />
           ) : (
             <DashBoardItem className="dashboard-item" key={index}>
-              <DashBoardImg src="./src/assets/pokeball.png" />
+              <DashBoardImg src="./assets/pokeball.png" />
             </DashBoardItem>
           );
         })}
