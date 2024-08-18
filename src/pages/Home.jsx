@@ -6,7 +6,7 @@ const Home = () => {
   const navigate = useNavigate();
   return (
     <HomeContainer>
-      <PokemonLogo src="./src/assets/pokemon-logo.png" alt="포켓몬 로고" />
+      <PokemonLogo src="/assets/pokemon-logo.png" alt="포켓몬 로고" />
       <StyledButton
         width={"220px"}
         height={"50px"}
