@@ -6,8 +6,10 @@ import {
   DashBoardTItle,
 } from "../styles/DexStyles";
 import PokemonCard from "./PokemonCard";
+import usePokemon from "../hooks/usePokemon";
 
-const Dashboard = ({ selectedPokemon, setSelectedPokemon }) => {
+const Dashboard = () => {
+  const { selectedPokemon } = usePokemon();
   return (
     <DashboardConatiner className="dashboard-container">
       <DashBoardTItle>나만의 포켓몬</DashBoardTItle>
@@ -15,13 +17,7 @@ const Dashboard = ({ selectedPokemon, setSelectedPokemon }) => {
       <DashBoardItemBox className="dashboard-item-box">
         {selectedPokemon.map((element, index) => {
           return element !== null ? (
-            <PokemonCard
-              key={index}
-              pokemonData={element}
-              selectedPokemon={selectedPokemon}
-              setSelectedPokemon={setSelectedPokemon}
-              isSelect={true}
-            />
+            <PokemonCard key={index} pokemonData={element} isSelect={true} />
           ) : (
             <DashBoardItem className="dashboard-item" key={index}>
               <DashBoardImg src="./assets/pokeball.png" />
