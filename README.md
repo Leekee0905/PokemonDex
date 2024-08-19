@@ -1,8 +1,39 @@
-# React + Vite
+```
+PokemonDex
+├─ .git
+├─ .gitignore
+├─ eslint.config.js
+├─ index.html
+├─ package-lock.json
+├─ package.json
+├─ public
+│  └─ assets
+│     ├─ favicon.png
+│     ├─ pokeball.png
+│     └─ pokemon-logo.png
+├─ README.md
+├─ src
+│  ├─ App.jsx
+│  ├─ components
+│  │  ├─ Dashboard.jsx
+│  │  ├─ PokemonCard.jsx
+│  │  └─ PokemonList.jsx
+│  ├─ data
+│  │  └─ mock.js
+│  ├─ index.css
+│  ├─ layout
+│  │  └─ Layout.jsx
+│  ├─ main.jsx
+│  ├─ pages
+│  │  ├─ Dex.jsx
+│  │  ├─ Home.jsx
+│  │  └─ PokemonDetail.jsx
+│  └─ styles
+│     ├─ DetailStyle.jsx
+│     ├─ DexStyles.jsx
+│     ├─ GlobalStyle.jsx
+│     ├─ HomeStyles.jsx
+│     └─ StyledButton.jsx
+└─ vite.config.js
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+```
