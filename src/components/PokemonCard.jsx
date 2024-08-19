@@ -7,14 +7,11 @@ import {
   CardPokeName,
 } from "../styles/DexStyles";
 import StyledButton from "../styles/StyledButton";
+import usePokemon from "../hooks/usePokemon";
 
-const PokemonCard = ({
-  pokemonData,
-  selectedPokemon,
-  setSelectedPokemon,
-  isSelect,
-}) => {
+const PokemonCard = ({ pokemonData, isSelect }) => {
   const navigate = useNavigate();
+  const { selectedPokemon, setSelectedPokemon } = usePokemon();
 
   const handleAddButton = () => {
     const dataLength = selectedPokemon.filter((e) => e !== null).length;
@@ -42,7 +39,6 @@ const PokemonCard = ({
     while (filteredData.length < selectedPokemon.length) {
       filteredData.push(null);
     }
-
     setSelectedPokemon(filteredData);
   };
 
