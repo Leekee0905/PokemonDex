@@ -6,16 +6,16 @@ import {
   DashBoardTItle,
 } from "../styles/DexStyles";
 import PokemonCard from "./PokemonCard";
-import usePokemon from "../hooks/usePokemon";
+import { useSelector } from "react-redux";
 
 const Dashboard = () => {
-  const { selectedPokemon } = usePokemon();
+  const pokemons = useSelector((state) => state.pokemon.selectedPokemon);
   return (
     <DashboardConatiner className="dashboard-container">
       <DashBoardTItle>나만의 포켓몬</DashBoardTItle>
 
       <DashBoardItemBox className="dashboard-item-box">
-        {selectedPokemon.map((element, index) => {
+        {pokemons.map((element, index) => {
           return element !== null ? (
             <PokemonCard key={index} pokemonData={element} isSelect={true} />
           ) : (

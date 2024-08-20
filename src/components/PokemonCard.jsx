@@ -7,39 +7,19 @@ import {
   CardPokeName,
 } from "../styles/DexStyles";
 import StyledButton from "../styles/StyledButton";
-import usePokemon from "../hooks/usePokemon";
+import { useDispatch } from "react-redux";
+import { addPokemon, deletePokemon } from "../redux/modules/pokemon";
 
 const PokemonCard = ({ pokemonData, isSelect }) => {
   const navigate = useNavigate();
-  const { selectedPokemon, setSelectedPokemon } = usePokemon();
+  const dispatch = useDispatch();
 
   const handleAddButton = () => {
-    const dataLength = selectedPokemon.filter((e) => e !== null).length;
-    if (dataLength >= 6) {
-      alert("선택할 수 있는 포켓몬 수를 넘었습니다.");
-      return;
-    }
-    if (selectedPokemon.includes(pokemonData)) {
-      alert("이미 선택한 포켓몬입니다.");
-      return;
-    }
-    const newArr = [...selectedPokemon];
-    const nullIndex = newArr.indexOf(null);
-    if (nullIndex !== -1) {
-      newArr[nullIndex] = pokemonData;
-    }
-    setSelectedPokemon(newArr);
+    dispatch(addPokemon(pokemonData));
   };
 
   const handleDeleteButton = (id) => {
-    const filteredData = selectedPokemon.filter(
-      (e) => e !== null && e.id !== id
-    );
-
-    while (filteredData.length < selectedPokemon.length) {
-      filteredData.push(null);
-    }
-    setSelectedPokemon(filteredData);
+    dispatch(deletePokemon(id));
   };
 
   const convertPokemonId = (id) => {

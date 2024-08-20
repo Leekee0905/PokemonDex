@@ -4,20 +4,25 @@ import Dex from "./pages/Dex";
 import Layout from "./layout/Layout";
 import PokemonDetail from "./pages/PokemonDetail";
 import GlobalStyle from "./styles/GlobalStyle";
+import { Provider } from "react-redux";
+import store from "./redux/config/configStore";
 
 const App = () => {
   return (
     <>
       <GlobalStyle />
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Layout />}>
-            <Route index element={<Home />} />
-            <Route path="/dex" element={<Dex />} />
-            <Route path="/pokemon-detail/:id" element={<PokemonDetail />} />
-          </Route>
-        </Routes>
-      </BrowserRouter>
+      <Provider store={store}>
+        <BrowserRouter>
+          <Routes>
+            .
+            <Route path="/" element={<Layout />}>
+              <Route index element={<Home />} />
+              <Route path="/dex" element={<Dex />} />
+              <Route path="/pokemon-detail/:id" element={<PokemonDetail />} />
+            </Route>
+          </Routes>
+        </BrowserRouter>
+      </Provider>
     </>
   );
 };
