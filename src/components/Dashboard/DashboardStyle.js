@@ -1,11 +1,5 @@
 import styled from "styled-components";
 
-export const DexContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  padding: 20px;
-`;
-
 export const DashBoardTItle = styled.h2`
   color: red;
   font-size: 64px;
