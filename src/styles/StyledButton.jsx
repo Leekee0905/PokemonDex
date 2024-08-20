@@ -8,6 +8,7 @@ const StyledButton = styled.button`
   border-radius: 10px;
   color: white;
   font-size: ${(props) => props.fontSize};
+  margin: 0 20px;
 `;
 
 export default StyledButton;

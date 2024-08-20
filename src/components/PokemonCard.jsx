@@ -7,36 +7,11 @@ import {
   CardPokeName,
 } from "../styles/DexStyles";
 import StyledButton from "../styles/StyledButton";
-import { useDispatch } from "react-redux";
-import {
-  addPokemon,
-  clearError,
-  deletePokemon,
-} from "../redux/modules/pokemon";
-import store from "../redux/config/configStore";
-import Swal from "sweetalert2";
+import usePokemon from "../hooks/usePokemon";
 
 const PokemonCard = ({ pokemonData, isSelect }) => {
   const navigate = useNavigate();
-  const dispatch = useDispatch();
-
-  const handleAddButton = () => {
-    dispatch(addPokemon(pokemonData));
-    const state = store.getState();
-    const error = state.pokemon.addPokemonError;
-    if (error) {
-      Swal.fire({
-        title: "Warning!",
-        text: error,
-        icon: "warning",
-        confirmButtonText: "확인",
-      }).then(() => dispatch(clearError()));
-    }
-  };
-
-  const handleDeleteButton = (id) => {
-    dispatch(deletePokemon(id));
-  };
+  const { addPokemonToTeam, deletePokemonFromTeam } = usePokemon();
 
   const convertPokemonId = (id) => {
     return id.toString().padStart(3, "0");
@@ -59,7 +34,9 @@ const PokemonCard = ({ pokemonData, isSelect }) => {
         fontSize="16px"
         onClick={(e) => {
           e.stopPropagation();
-          isSelect ? handleDeleteButton(pokemonData.id) : handleAddButton();
+          isSelect
+            ? deletePokemonFromTeam(pokemonData.id)
+            : addPokemonToTeam(pokemonData);
         }}
       >
         {isSelect ? "삭제" : "추가"}

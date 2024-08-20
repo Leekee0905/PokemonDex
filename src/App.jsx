@@ -14,7 +14,6 @@ const App = () => {
       <Provider store={store}>
         <BrowserRouter>
           <Routes>
-            .
             <Route path="/" element={<Layout />}>
               <Route index element={<Home />} />
               <Route path="/dex" element={<Dex />} />

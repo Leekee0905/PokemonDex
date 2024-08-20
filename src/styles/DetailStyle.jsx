@@ -23,3 +23,7 @@ export const DetailInfo = styled.p`
   font-size: 36px;
   margin: 20px 0;
 `;
+
+export const DetailButtonBox = styled.div`
+  display: flex;
+`;
