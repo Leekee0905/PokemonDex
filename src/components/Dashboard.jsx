@@ -12,15 +12,23 @@ const Dashboard = () => {
   const pokemons = useSelector((state) => state.pokemon.selectedPokemon);
   return (
     <DashboardConatiner className="dashboard-container">
-      <DashBoardTItle>나만의 포켓몬</DashBoardTItle>
+      <DashBoardTItle className="dashboard-title">나만의 포켓몬</DashBoardTItle>
 
       <DashBoardItemBox className="dashboard-item-box">
         {pokemons.map((element, index) => {
           return element !== null ? (
-            <PokemonCard key={index} pokemonData={element} isSelect={true} />
+            <PokemonCard
+              className="selected-pokemon-card"
+              key={index}
+              pokemonData={element}
+              isSelect={true}
+            />
           ) : (
             <DashBoardItem className="dashboard-item" key={index}>
-              <DashBoardImg src="./assets/pokeball.png" />
+              <DashBoardImg
+                className="dashboard-pokemon-ball"
+                src="./assets/pokeball.png"
+              />
             </DashBoardItem>
           );
         })}
