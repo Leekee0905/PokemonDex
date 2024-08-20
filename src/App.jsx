@@ -1,8 +1,8 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Home from "./pages/Home";
-import Dex from "./pages/Dex";
+import Home from "./pages/Home/Home";
+import Dex from "./pages/Dex/Dex";
 import Layout from "./layout/Layout";
-import PokemonDetail from "./pages/PokemonDetail";
+import PokemonDetail from "./pages/PokemonDetail/PokemonDetail";
 import GlobalStyle from "./styles/GlobalStyle";
 import { Provider } from "react-redux";
 import store from "./redux/config/configStore";

@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
-import { HomeContainer, PokemonLogo } from "../styles/HomeStyles";
-import StyledButton from "../styles/StyledButton";
+import { HomeContainer, PokemonLogo } from "./HomeStyles";
+import StyledButton from "../../styles/StyledButton";
 
 const Home = () => {
   const navigate = useNavigate();

@@ -5,10 +5,10 @@ import {
   DetailImage,
   DetailInfo,
   DetailName,
-} from "../styles/DetailStyle";
-import MOCK_DATA from "../data/mock";
-import StyledButton from "../styles/StyledButton";
-import usePokemon from "../hooks/usePokemon";
+} from "./DetailStyle";
+import MOCK_DATA from "../../data/mock";
+import StyledButton from "../../styles/StyledButton";
+import usePokemon from "../../hooks/usePokemon";
 
 const PokemonDetail = () => {
   const params = useParams();

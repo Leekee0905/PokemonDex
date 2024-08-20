@@ -1,6 +1,6 @@
-import MOCK_DATA from "../data/mock";
-import { PokemonListContainer } from "../styles/DexStyles";
-import PokemonCard from "./PokemonCard";
+import MOCK_DATA from "../../data/mock";
+import { PokemonListContainer } from "./PokemonListStyle";
+import PokemonCard from "../PokemonCard/PokemonCard";
 
 const PokemonList = () => {
   const data = MOCK_DATA;
