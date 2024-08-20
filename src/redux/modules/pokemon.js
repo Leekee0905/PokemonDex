@@ -6,6 +6,7 @@ const pokemonSlice = createSlice({
   name: "pokemon",
   initialState: {
     selectedPokemon: initialState,
+    addPokemonError: null,
   },
   reducers: {
     addPokemon: (state, action) => {
@@ -14,10 +15,13 @@ const pokemonSlice = createSlice({
         (pokemon) => pokemon?.id === action.payload.id
       );
       if (dataLength >= 6) {
-        return alert("선택할 수 있는 포켓몬 수를 넘었습니다.");
+        state.addPokemonError = "선택할 수 있는 포켓몬 수를 넘었습니다.";
+        return;
       }
+
       if (isSelected) {
-        return alert("이미 선택한 포켓몬입니다.");
+        state.addPokemonError = "이미 선택한 포켓몬입니다.";
+        return;
       }
       const newArr = [...state.selectedPokemon];
       const nullIndex = newArr.indexOf(null);
@@ -36,8 +40,11 @@ const pokemonSlice = createSlice({
       }
       state.selectedPokemon = filteredData;
     },
+    clearError: (state) => {
+      state.addPokemonError = null;
+    },
   },
 });
 
-export const { addPokemon, deletePokemon } = pokemonSlice.actions;
+export const { addPokemon, deletePokemon, clearError } = pokemonSlice.actions;
 export default pokemonSlice.reducer;
