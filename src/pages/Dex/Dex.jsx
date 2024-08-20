@@ -1,6 +1,6 @@
 import Dashboard from "../../components/Dashboard/Dashboard";
 import PokemonList from "../../components/PokemonList/PokemonList";
-import { DexContainer } from "../../styles/DexStyles";
+import { DexContainer } from "./DexStyles";
 
 const Dex = () => {
   return (
