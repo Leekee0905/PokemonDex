@@ -5,9 +5,9 @@ import {
   CardInfo,
   CardPokeId,
   CardPokeName,
-} from "../styles/DexStyles";
-import StyledButton from "../styles/StyledButton";
-import usePokemon from "../hooks/usePokemon";
+} from "./PokemonCardStyle";
+import StyledButton from "../../styles/StyledButton";
+import usePokemon from "../../hooks/usePokemon";
 
 const PokemonCard = ({ pokemonData, isSelect }) => {
   const navigate = useNavigate();

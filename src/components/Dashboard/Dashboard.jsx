@@ -1,12 +1,12 @@
-import usePokemon from "../hooks/usePokemon";
+import usePokemon from "../../hooks/usePokemon";
 import {
   DashboardConatiner,
   DashBoardImg,
   DashBoardItem,
   DashBoardItemBox,
   DashBoardTItle,
-} from "../styles/DexStyles";
-import PokemonCard from "./PokemonCard";
+} from "./DashboardStyle";
+import PokemonCard from "../PokemonCard/PokemonCard";
 
 const Dashboard = () => {
   const { selectedPokemon } = usePokemon();
