@@ -1,6 +1,6 @@
 ## 프로젝트 구조
 
-```markdown
+
 ```
 PokemonDex
 ├─ .gitignore
@@ -56,8 +56,6 @@ PokemonDex
 
 ```
 
-```
-
 ## 프로젝트 배포 주소
 
 URL: https://pokemon-dex-nine.vercel.app/
@@ -66,7 +64,8 @@ URL: https://pokemon-dex-nine.vercel.app/
 
 ### 홈
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/d2e7cef1-2ab0-4107-a0ee-44a42d48bc4d/02df129a-b2d5-44a5-bdd2-0c47b70093c9/image.png)
+![image](https://github.com/user-attachments/assets/cea1efae-94cb-4107-b286-667c2991687b)
+
 
 특별한 기능 없이 /dex로 navigate하는 버튼 하나가 구현되어 있다.
 
