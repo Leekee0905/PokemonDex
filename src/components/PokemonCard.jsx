@@ -8,7 +8,13 @@ import {
 } from "../styles/DexStyles";
 import StyledButton from "../styles/StyledButton";
 import { useDispatch } from "react-redux";
-import { addPokemon, deletePokemon } from "../redux/modules/pokemon";
+import {
+  addPokemon,
+  clearError,
+  deletePokemon,
+} from "../redux/modules/pokemon";
+import store from "../redux/config/configStore";
+import Swal from "sweetalert2";
 
 const PokemonCard = ({ pokemonData, isSelect }) => {
   const navigate = useNavigate();
@@ -16,6 +22,16 @@ const PokemonCard = ({ pokemonData, isSelect }) => {
 
   const handleAddButton = () => {
     dispatch(addPokemon(pokemonData));
+    const state = store.getState();
+    const error = state.pokemon.addPokemonError;
+    if (error) {
+      Swal.fire({
+        title: "Warning!",
+        text: error,
+        icon: "warning",
+        confirmButtonText: "확인",
+      }).then(() => dispatch(clearError()));
+    }
   };
 
   const handleDeleteButton = (id) => {
