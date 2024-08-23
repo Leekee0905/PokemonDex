@@ -22,13 +22,18 @@ const PokemonCard = ({ pokemonData, isSelect }) => {
   };
 
   return (
-    <Card onClick={() => navigateToDetail()}>
-      <CardImg src={pokemonData.img_url} />
-      <CardInfo>
-        <CardPokeName>{pokemonData.korean_name}</CardPokeName>
-        <CardPokeId>No. {convertPokemonId(pokemonData.id)}</CardPokeId>
+    <Card className="pokemon-card" onClick={() => navigateToDetail()}>
+      <CardImg className="pokemon-img" src={pokemonData.img_url} />
+      <CardInfo className="pokemon-info">
+        <CardPokeName className="pokemon-name">
+          {pokemonData.korean_name}
+        </CardPokeName>
+        <CardPokeId className="pokemon-id">
+          No. {convertPokemonId(pokemonData.id)}
+        </CardPokeId>
       </CardInfo>
       <StyledButton
+        className="pokemon-button"
         width="45px"
         height="20px"
         fontSize="16px"

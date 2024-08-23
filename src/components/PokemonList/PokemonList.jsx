@@ -5,7 +5,7 @@ import PokemonCard from "../PokemonCard/PokemonCard";
 const PokemonList = () => {
   const data = MOCK_DATA;
   return (
-    <PokemonListContainer>
+    <PokemonListContainer className="pokemon-list-container">
       {data.map((pokemon) => {
         return <PokemonCard key={pokemon.id} pokemonData={pokemon} />;
       })}

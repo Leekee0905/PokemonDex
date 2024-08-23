@@ -16,13 +16,24 @@ const PokemonDetail = () => {
   const data = MOCK_DATA.find((e) => e.id === Number(params.id));
   const { addPokemonToTeam } = usePokemon();
   return (
-    <DetailContainer>
-      <DetailImage src={data.img_url} alt={data.korean_name} />
-      <DetailName>{data.korean_name}</DetailName>
-      <DetailInfo>타입: {data.types.map((e) => e).join(" ")}</DetailInfo>
-      <DetailInfo>{data.description}</DetailInfo>
-      <DetailButtonBox>
+    <DetailContainer className="pokemon-detail-container">
+      <DetailImage
+        className="pokemon-detail-img"
+        src={data.img_url}
+        alt={data.korean_name}
+      />
+      <DetailName className="pokemon-detail-name">
+        {data.korean_name}
+      </DetailName>
+      <DetailInfo className="pokemon-detail-info">
+        타입: {data.types.map((e) => e).join(" ")}
+      </DetailInfo>
+      <DetailInfo className="pokemon-detail-info">
+        {data.description}
+      </DetailInfo>
+      <DetailButtonBox className="pokemon-detail-button-box">
         <StyledButton
+          className="pokemon-detail-button"
           width="100px"
           height="40px"
           fontSize="32px"
@@ -31,6 +42,7 @@ const PokemonDetail = () => {
           추가
         </StyledButton>
         <StyledButton
+          className="pokemon-detail-button"
           width="100px"
           height="40px"
           fontSize="32px"
